@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -18,6 +18,16 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    pkgs.htop
+    pkgs.neofetch
+    pkgs.xclip
+    pkgs.unzip
+    pkgs.ripgrep
+    pkgs.ispell
+    pkgs.lua
+    pkgs.luarocks 
+    pkgs.nodejs_22
+    pkgs.zsh
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
@@ -38,7 +48,7 @@
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
-  home.file = {
+  # home.file = {
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
@@ -49,7 +59,10 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-  };
+    # ".bashrc".source = ./.bashrc;
+  # };
+
+  # home.file.".bashrc.test".source = ./.bashrc;
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -73,4 +86,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.emacs.enable = true;
+  programs.neovim.enable = true;
+  programs.lazygit.enable = true;
+  programs.tmux.enable = true;
+  # programs.zsh.enable = true;
+  programs.bash.enable = true;
+  programs.starship.enable = true;
 }
