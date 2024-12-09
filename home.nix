@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -28,15 +28,15 @@
     pkgs.luarocks 
     pkgs.nodejs_22
     pkgs.zsh
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
     # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
     # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+    # (pkgs.nerdfonts.override { fonts = [ "FiraCode" "CascadiaCove" "JetBrainsMono" ]; })
+    pkgs.nerd-fonts.fira-code
+    pkgs.nerd-fonts.caskaydia-cove
+    pkgs.nerd-fonts.jetbrains-mono
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -59,10 +59,8 @@
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
     # '';
-    # ".bashrc".source = ./.bashrc;
   # };
 
-  # home.file.".bashrc.test".source = ./.bashrc;
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -90,7 +88,6 @@
   programs.neovim.enable = true;
   programs.lazygit.enable = true;
   programs.tmux.enable = true;
-  # programs.zsh.enable = true;
   programs.bash.enable = true;
   programs.starship.enable = true;
 }
