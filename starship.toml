@@ -15,6 +15,7 @@ $ruby\
 $rust\
 $go\
 $zig\
+$c\
 $nix_shell\
 $jobs\
 $time\
