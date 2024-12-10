@@ -1,0 +1,39 @@
+format = """ 
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$fill\
+$nodejs\
+$bun\
+$deno\
+$lua\
+$python\
+$ruby\
+$rust\
+$go\
+$zig\
+$nix_shell\
+$jobs\
+$time\
+$line_break\
+$character"""
+
+[fill]
+symbol = ' '
+
+[time]
+disabled = false
+
+# [rust]
+# format = '[$symbol($version )]($style)'
+
+# [nix]
+# format = '[$symbol($version )]($style)'
+
+[bun]
+# format = '[$symbol($version )]($style)'
+symbol = ' '
+style = 'bold white'
