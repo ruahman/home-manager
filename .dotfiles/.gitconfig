@@ -1,0 +1,8 @@
+[user]
+	signingkey = 06F1C22CE653AEF5
+	email = dego_vila@yahoo.com
+	name = Diego R Vila
+[commit]
+	gpgsign = true
+[credential]
+	helper = store

@@ -21,14 +21,16 @@
     pkgs.nodejs_22
     pkgs.zsh
 
+    # fonts
     pkgs.nerd-fonts.fira-code
     pkgs.nerd-fonts.caskaydia-cove
     pkgs.nerd-fonts.jetbrains-mono
   ];
 
+  # file needs to be added to git before you can refrence it.
   home.file = {
-    # file needs to be added to git before you can refrence it.
-    ".config/starship.toml".source = ./starship.toml;
+    ".config/starship.toml".source = ./.dotfiles/starship.toml;
+    ".gitconfig".source = ./.dotfiles/.gitconfig;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
@@ -44,6 +46,7 @@
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
+  programs.git.enable = true;
   programs.emacs.enable = true;
   programs.neovim.enable = true;
   programs.lazygit.enable = true;
